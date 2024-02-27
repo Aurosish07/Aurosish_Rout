@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang='eng'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <title>My webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #div {
+
+            width: 100%;
+            height: 4rem;
+            /* border-bottom: solid 2px gray; */
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #center {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        #section {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            margin-right: 2rem;
+
+        }
+
+        #section div {
+            margin-left: 3.5rem;
+            font-size: 1.3rem;
+            font-family: 'poppins', sans-serif;
+            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+            /* font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; */
+
+
+
+            cursor: pointer;
+            /* font-weight: bold; */
+            text-decoration: underline;
+        }
+
+        #section div a {
+
+            color: white;
+            text-decoration: none;
+        }
+
+        #section div a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 0.15rem;
+        }
+
+
+        /* Styles for mobile nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 100%;
+            width: 70%;
+            height: 65vh;
+            background-color: #23282d;
+            padding: 20px;
+            text-align: center;
+            /* display: none; */
+            margin-top: 62px;
+            font-family: 'poppins', sans-serif;
+            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+            transition: all 1.5s ease;
+        }
+
+
+        .animate {
+            transform: translateX(-100%);
+        }
+
+
+
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            padding: 20px 0;
+            display: block;
+        }
+
+        .mobile-nav a:hover {
+
+            text-decoration: underline;
+            text-decoration-thickness: 0.15rem;
+
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        #icon {
+            transition: transform 1s;
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+
+        }
+
+        @media (min-width:766px) and (max-width:789px) {
+
+            #div {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #section {
+                margin-right: -0.3rem;
+            }
+
+
+        }
+
+        @media (max-width: 767px) {
+
+
+            #div {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #section {
+                display: none;
+            }
+
+            .hamburger-menu {
+                display: block;
+                margin-right: 20px;
+                position: relative;
+            }
+        }
+
+
+        #hero {
+            display: flex;
+
+        }
+
+        #sideProfile {
+
+            width: 28%;
+            height: 100vh;
+            /* background-color: #454b52; */
+            /* background-color: #343a40; */
+            background-color: #233140;
+            overflow-y: scroll;
+            color: white;
+
+        }
+
+
+
+        #mainProfile {
+            width: 70%;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+
+        }
+
+        #info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 100%;
+            height: 100vh; */
+        }
+
+
+        #pic img {
+            padding-top: 2rem;
+            max-width: 40%;
+            max-height: 40%;
+
+        }
+
+        p {
+            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+            font-family: 'poppins', sans-serif;
+            font-size: 1.3rem;
+            text-align: center;
+            color: #ece7e7;
+            /* padding-left:20%; */
+            /* background-color:deepskyblue; */
+
+        }
+
+        #card {
+            text-align: center;
+        }
+
+        #data {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+        }
+
+
+        #msg,
+        #resume {
+            background-color: rgb(32, 162, 202);
+            border-color: rgb(32, 162, 202);
+            color: white;
+            font-family: 'poppins', sans-serif;
+            width: 40%;
+            height: 3rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: large;
+        }
+
+        .data {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+        }
+
+
+
+        #cardAbout,
+        .projectView {
+
+            background-color: var(--dark);
+            color: white;
+            font-family: 'poppins', sans-serif;
+            border-radius: 5px;
+            text-align: center;
+            font-size: large;
+        }
+
+        #topskills {
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            column-gap: 1.5rem; */
+            width: 100%;
+
+            height: 15rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* flex-direction: column; */
+            background-color: var(--dark);
+            border-color: var(--dark);
+
+        }
+
+
+
+        #skill img {
+            width: 5rem;
+            height: 5rem;
+
+        }
+
+        #skill,
+        #skill1 {
+            height: 5rem;
+            border: solid 1px #233140;
+            background-color: #233140;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 calc(80% / 4);
+            box-sizing: border-box;
+            align-items: center;
+            margin-left: 5px;
+            margin-bottom: 2rem;
+
+        }
+
+
+
+
+        #skill.ExtraView,
+        #skill1.ExtraView1 {
+            /* margin-top: 0.8rem; */
+            height: 3rem;
+            width: 50%;
+            background-color: #233140;
+        }
+
+        #skill.ExtraView a p,
+        #skill1.ExtraView1 a p {
+            margin-top: 6%;
+        }
+
+        #mainProject {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: normal;
+            flex-wrap: wrap;
+            /* border: solid 1px #233140;
+            background-color: #233140;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease; */
+        }
+
+        .project1,
+        .project2,
+        .project3,
+        .project4 {
+            box-sizing: border-box;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            border: solid 1px #233140;
+            background-color: #233140;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+
+
+
+        }
+
+        .spanText1,
+        .spanText2,
+        .spanText3,
+        .spanText4 {
+            display: none;
+            text-align: center;
+            width: 12rem;
+            transition: all 2s ease;
+        }
+
+        #link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        #link a {
+            flex-basis: calc(25% - 10px);
+            margin: 5px;
+        }
+
+        @media screen and (max-width:1237px) {
+            #topskill div {
+                height: 5rem;
+                border: solid 1px #233140;
+                background-color: #233140;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
+                box-sizing: border-box;
+                margin-left: 5px;
+
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                flex-basis: calc(100%, 3);
+
+            }
+
+            #skill.ExtraView {
+                height: 5rem;
+
+            }
+
+        }
+
+        @media screen and (max-width:1368px) {
+
+            #project {
+                flex-direction: column;
+                /* align-items: center; */
+                gap: 0.5rem;
+                width: 50rem;
+            }
+
+            #mainProject {
+                justify-content: center;
+            }
+
+            .projectBtn {
+                display: none;
+            }
+
+            #spanText {
+                display: block;
+                margin-bottom: 1em;
+            }
+        }
+
+        #skill:hover,
+        #skill1:hover,
+        #link a :hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        #skill :active,
+        #skill1 :active,
+        #link a :hover {
+            /* box-shadow: none; */
+            transform: translateY(1px);
+        }
+
+
+        .project1:hover,
+        .project2:hover,
+        .project3:hover,
+        .project4:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+
+
+
+
+        .project1:hover span.spanText1,
+        .project2:hover span.spanText2,
+        .project3:hover span.spanText3,
+        .project4:hover span.spanText4 {
+            display: block;
+
+        }
+
+        .project1 :active,
+        .project2 :active,
+        .project3 :active,
+        .project4 :active {
+            box-shadow: none;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <nav class="navbar navbar-dark bg-dark" id="div">
+            <div class="container-fluid">
+                <div id="center" onclick="go()">
+
+                    <div id="red"><img width="30" height="30"
+                            src="https://img.icons8.com/ios-filled/50/FA5252/full-stop.png" alt="full-stop" /></div>
+                    <div id="green"><img width="30" height="30"
+                            src="https://img.icons8.com/ios-filled/50/cec722/full-stop.png" alt="full-stop" /></div>
+                    <div id="blue"><img width="30" height="30"
+                            src="https://img.icons8.com/ios-filled/50/2ce71c/full-stop.png" alt="full-stop" /></div>
+                </div>
+
+                <div id="section" class=" d-md-flex">
+                    <div id="About"><a href="">About</a></div>
+                    <div id="Projects"><a href="">Projects</a></div>
+                    <div id="Skills"><a href="">Skills</a></div>
+                    <div id="Conatact"><a href="">Conatact</a></div>
+                    <div id="Blog"><a href="">Blogs</a></div>
+                </div>
+
+                <!-- Hamburger Menu Icon -->
+                <div class="hamburger-menu" onclick="toggleMobileNav()">
+                    <img width="25" height="25" src="https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png"
+                        alt="Menu" id="icon">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Skills</a>
+            <a href="#">Contact</a>
+            <a href="#">Blogs</a>
+        </nav>
+
+
+        <div id="hero">
+
+            <div id="sideProfile">
+                <div id="info">
+                
+                    <div id="pic">
+
+                        <img id="" src="profile-pic (1).png">
+                    </div>
+                    <br>
+
+                    <p class="name" style="font-weight: bold;">Aurosish Rout</p>
+                    <p class="loc" style="font-size: 0.8rem;"> <img width="18" height="18"
+                            src="https://img.icons8.com/material-outlined/24/FFFFFF/marker.png" alt="marker" /> Cuttack
+                        , Odisha , India </p>
+                    <p class="dev">Full-Stack Web Developer </p>
+                    <div id="card">
+                        <div id="data">
+
+                            <button id="msg">
+                                <a href="/index.html" class="data">Message</a>
+                            </button>
+                            <button id="resume">
+                                <a href="/index.html" class="data">Resume</a>
+                            </button>
+                        </div>
+                        <br>
+                        <br>
+
+                        <p id="about" style="text-align: start;padding-left: 7%;">
+                            Experienced Full Stack Developer and programmer passionate about creating innovative web
+                            apps<span id="dot"> </span>
+                        </p>
+                        <button id="cardAbout">View more</button>
+
+
+                        <br>
+                        <br>
+                        <br>
+                        <p>Top Skills</p>
+
+
+                        <div id="topskills">
+                            <div id="skill">
+                                <img width="96" height="96" src="https://img.icons8.com/fluency/96/javascript.png"
+                                    alt="javascript" />
+                                Javascript
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96"
+                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+                                    alt="external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo" />
+                                React.js
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96" src="https://img.icons8.com/color/96/git.png" alt="git" />
+                                Git.
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96"
+                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo.png"
+                                    alt="external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo" />
+                                Jquery
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96" src="https://img.icons8.com/color/96/nodejs.png"
+                                    alt="nodejs" />
+                                Node.js
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96" src="https://img.icons8.com/color/96/postgreesql.png"
+                                    alt="postgreesql" />
+                                Postgrece sql
+                            </div>
+                            <div id="skill">
+                                <img width="96" height="96" src="https://img.icons8.com/color-glass/96/api-settings.png"
+                                    alt="api-settings" />
+                                Rest api
+                            </div>
+                            <div id="skill">
+                                <img width="100" height="100" src="https://img.icons8.com/ios/100/express-js.png"
+                                    alt="express-js" />
+                                Express.js
+                            </div>
+                            <br>
+                            <div id="skill" class="ExtraView">
+                                <a href="/index.html" style="text-decoration: none;">
+
+                                    <p style="font-size: 1.5rem;color: rgb(232, 227, 227);font-weight: 500;">10+ more
+                                        skills
+                                    </p>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="projects">
+                            <p>Top Projects</p>
+                            <!-- <br> -->
+                            <div id="mainProject">
+                                <div class="project1">
+
+                                    <img src="/project_imges/fv.png" width="190px" height="110px">
+                                    <span>
+
+                                        Blog website
+                                    </span>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
+                                        Now</button>
+                                    <span class="spanText1">This is a blog website i created using html , css and js i
+                                        have added a lot of features in it for better user experience and readablity
+                                    </span>
+
+                                </div>
+                                <div class="project2">
+
+                                    <img src="/project_imges/gpt.png" width="190px" height="110px">
+                                    <span>
+
+                                        Summerize Gpt
+                                    </span>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
+                                        Now</button>
+                                    <span class="spanText2">This website usages GPT-3.5 + OCR to extract text from user
+                                        given photo and then it can analyze, generate summaries, provide context,
+                                        and answer further related questions.
+                                    </span>
+
+                                </div>
+                                <div class="project3">
+
+                                    <img src="/project_imges/a.i_quiz.png" width="190px" height="110px">
+                                    <span>
+
+                                        A.I Quiz
+                                    </span>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
+                                        Now</button>
+                                    <span class="spanText3">This AI quiz website utilizes A.I(GPT-3.5) to ask quizzes
+                                        based on
+                                        selected technology and skill level, offering personalized learning experiences
+                                    </span>
+
+                                </div>
+                                <div class="project4">
+
+                                    <img src="/project_imges/weather.png" width="190px" height="110px">
+                                    <span>
+
+                                        Weather App
+                                    </span>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
+                                        Now</button>
+                                    <span class="spanText4">This weather app, powered by the OpenWeatherMap API,
+                                        provides real-time weather data for your current location or any location you
+                                        search for manually </span>
+
+
+                                </div>
+
+
+
+
+                            </div>
+                            <div id="skill1" class="ExtraView1" style="width: 100%;">
+                                <a href="/index.html" style="text-decoration: none;">
+
+                                    <p style="font-size: 1.5rem;color: rgb(232, 227, 227);font-weight: 500;">10+ more
+                                        projects
+                                    </p>
+
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <p>Connect with me</p>
+                        <div id="link">
+
+                            <a href="#"><img width="55" height="55" src="https://img.icons8.com/color/96/apple-mail.png"
+                                    alt="apple-mail" /></a>
+                            <a href="https://github.com/Aurosish07?tab=repositories"><img width="64" height="64"
+                                    src="https://img.icons8.com/sf-black-filled/64/FFFFFF/github.png"
+                                    alt="github" /></a>
+                            <a href="https://www.linkedin.com/in/aurosish-rout-2998aa253/"><img width="48" height="48"
+                                    src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" /></a>
+                            <a href="https://www.upwork.com/freelancers/~01f1c5734144940692"><img width="48" height="48"
+                                    src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-upwork-a-global-freelancing-platform-where-professionals-connect-and-collaborate-remotely-logo-shadow-tal-revivo.png"
+                                    alt="external-upwork-a-global-freelancing-platform-where-professionals-connect-and-collaborate-remotely-logo-shadow-tal-revivo" /></a>
+                            <a href="https://www.instagram.com/aurosish.tech/"><img width="48" height="48"
+                                    src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" /></a>
+                            <a href="https://twitter.com/SCIENTIFIC1492">
+                                <img width="50" height="50"
+                                    src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png"
+                                    alt="twitterx--v1" />
+
+
+                            </a>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="mainProfile" class="bg-light">
+                fdhjkfsjk
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <script>
+
+
+            // border: solid 1px #233140;
+            // height: min - content;
+            // border - bottom - color: #233140;
+            // background - color: #233140;
+            // box - shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            let box1 = document.querySelector(".project1");
+            let box2 = document.querySelector(".project2");
+            let box3 = document.querySelector(".project3");
+            let box4 = document.querySelector(".project4");
+
+            box1.addEventListener('mouseover', function () {
+                box2.style.height = "min-content";
+            })
+            box2.addEventListener('mouseover', function () {
+                box1.style.height = "min-content";
+            })
+
+            box3.addEventListener('mouseover', function () {
+                box4.style.height = "min-content";
+            })
+            box4.addEventListener('mouseover', function () {
+                box3.style.height = "min-content";
+            })
+
+
+            function toggleMobileNav() {
+                var mobileNav = document.getElementById('mobileNav');
+                let icon = document.querySelector("#icon");
+                icon.classList.toggle("rotate");
+                // mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+                mobileNav.classList.toggle("animate")
+
+            }
+
+            let id = document.querySelector("#dot");
+            let text = " ...........";
+            let splitText = text.split("");
+
+            let interval = setInterval(writeText, 200);
+            let i = 0;
+            let direction = 1;
+
+            function writeText() {
+                if (i === splitText.length) {
+                    direction = -1;
+                    id.innerHTML = "";
+                } else if (i === 0 && direction === -1) {
+                    direction = 1;
+                }
+
+                if (direction === 1) {
+                    id.innerHTML += splitText[i];
+                    i++;
+                } else {
+                    id.innerHTML = id.innerHTML.slice(0, -1);
+                    i--;
+                }
+
+                if (i === 0 && direction === 1) {
+                    clearInterval(interval); // If you want to stop the animation after one full cycle
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+            function go() {
+                window.location.href = "/";
+            }
+
+
+        </script>
+</body>
+
+</html>
