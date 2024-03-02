@@ -64,7 +64,7 @@
 
         #section div a {
 
-            color: white;
+            /* color: white; */
             text-decoration: none;
         }
 
@@ -167,6 +167,16 @@
 
         }
 
+
+        .navbar-dark {
+            /* color:#333333; */
+            background-color: #f5f5f5;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: none;
+            color: #f5f5f5;
+        }
+
         #sideProfile {
 
             width: 28%;
@@ -184,10 +194,18 @@
         #mainProfile {
             width: 70%;
             height: 100vh;
-            background-color: #f0f0f0;
+            /* background-color: #f0f0f0; */
+            background-color: #f5f5f5;
             overflow: hidden;
 
+
         }
+
+        #intro {
+            text-align: center;
+        }
+
+
 
         #info {
             display: flex;
@@ -198,15 +216,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* width: 100%;
-            height: 100vh; */
+
         }
 
 
+
         #pic img {
-            padding-top: 2rem;
-            max-width: 40%;
-            max-height: 40%;
+            /* padding-top: 2rem; */
+            max-width: 45%;
+            max-height: 45%;
+            border: solid 4px #6c63ff;
+            border-radius: 45%;
 
         }
 
@@ -235,8 +255,8 @@
 
         #msg,
         #resume {
-            background-color: rgb(32, 162, 202);
-            border-color: rgb(32, 162, 202);
+            background-color: #6c63ff;
+            border-color: #6c63ff;
             color: white;
             font-family: 'poppins', sans-serif;
             width: 40%;
@@ -244,6 +264,12 @@
             border-radius: 5px;
             text-align: center;
             font-size: large;
+        }
+
+        #msg :hover,
+        #resume :hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
         }
 
         .data {
@@ -465,13 +491,64 @@
             box-shadow: none;
             transform: translateY(1px);
         }
+
+
+
+        .hero {
+
+            padding: 80px 0;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+
+        .hero-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #6c63ff;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-button {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: #5a50a5;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="main">
-        <nav class="navbar navbar-dark bg-dark" id="div">
+        <nav class="navbar navbar-dark" id="div">
             <div class="container-fluid">
                 <div id="center" onclick="go()">
 
@@ -484,11 +561,11 @@
                 </div>
 
                 <div id="section" class=" d-md-flex">
-                    <div id="About"><a href="">About</a></div>
-                    <div id="Projects"><a href="">Projects</a></div>
-                    <div id="Skills"><a href="">Skills</a></div>
-                    <div id="Conatact"><a href="">Conatact</a></div>
-                    <div id="Blog"><a href="">Blogs</a></div>
+                    <div id="About"><a href="" style="color:#333333">About</a></div>
+                    <div id="Projects"><a href="" style="color:#333333">Projects</a></div>
+                    <div id="Skills"><a href="" style="color:#333333">Skills</a></div>
+                    <div id="Conatact"><a href="" style="color:#333333">Conatact</a></div>
+                    <div id="Blog"><a href="" style="color:#333333">Blogs</a></div>
                 </div>
 
                 <!-- Hamburger Menu Icon -->
@@ -513,11 +590,21 @@
 
             <div id="sideProfile">
                 <div id="info">
-                
+                    <br>
+                    <br>
+
                     <div id="pic">
 
+
+
+
                         <img id="" src="profile-pic (1).png">
+
+
+
+
                     </div>
+
                     <br>
 
                     <p class="name" style="font-weight: bold;">Aurosish Rout</p>
@@ -528,11 +615,15 @@
                     <div id="card">
                         <div id="data">
 
-                            <button id="msg">
-                                <a href="/index.html" class="data">Message</a>
+
+
+                            <button id="msg" onclick="conct('msg')">
+                                <!-- <a href="/index.html" class="data">Message</a> -->
+                                Message
                             </button>
-                            <button id="resume">
-                                <a href="/index.html" class="data">Resume</a>
+                            <button id="resume" onclick="conct('res')">
+                                <!-- <a href="/index.html" class="data">Resume</a> -->
+                                Resume
                             </button>
                         </div>
                         <br>
@@ -622,8 +713,12 @@
 
                                         Blog website
                                     </span>
-                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
-                                        Now</button>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn"><a
+                                            href="https://future-vision.live/"
+                                            style="text-decoration: none;color: white;">
+                                            View
+                                            Now
+                                        </a></button>
                                     <span class="spanText1">This is a blog website i created using html , css and js i
                                         have added a lot of features in it for better user experience and readablity
                                     </span>
@@ -636,8 +731,14 @@
 
                                         Summerize Gpt
                                     </span>
-                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
-                                        Now</button>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">
+                                        <a
+                                            href="https://future-vision.live/"
+                                            style="text-decoration: none;color: white;">
+                                            View
+                                            Now
+                                        </a>
+                                    </button>
                                     <span class="spanText2">This website usages GPT-3.5 + OCR to extract text from user
                                         given photo and then it can analyze, generate summaries, provide context,
                                         and answer further related questions.
@@ -651,8 +752,14 @@
 
                                         A.I Quiz
                                     </span>
-                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
-                                        Now</button>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">
+                                        <a
+                                            href="https://future-vision.live/"
+                                            style="text-decoration: none;color: white;">
+                                            View
+                                            Now
+                                        </a>
+                                    </button>
                                     <span class="spanText3">This AI quiz website utilizes A.I(GPT-3.5) to ask quizzes
                                         based on
                                         selected technology and skill level, offering personalized learning experiences
@@ -666,8 +773,14 @@
 
                                         Weather App
                                     </span>
-                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">View
-                                        Now</button>
+                                    <button class="projectView" style="font-size: 1rem;" class="projectBtn">
+                                        <a
+                                        href="https://future-vision.live/"
+                                        style="text-decoration: none;color: white;">
+                                        View
+                                        Now
+                                    </a>
+                                    </button>
                                     <span class="spanText4">This weather app, powered by the OpenWeatherMap API,
                                         provides real-time weather data for your current location or any location you
                                         search for manually </span>
@@ -696,9 +809,11 @@
 
                             <a href="#"><img width="55" height="55" src="https://img.icons8.com/color/96/apple-mail.png"
                                     alt="apple-mail" /></a>
-                            <a href="https://github.com/Aurosish07?tab=repositories"><img width="64" height="64"
-                                    src="https://img.icons8.com/sf-black-filled/64/FFFFFF/github.png"
-                                    alt="github" /></a>
+                            <a href="https://github.com/Aurosish07?tab=repositories">
+
+                                <img width="64" height="64"
+                                    src="https://img.icons8.com/sf-black-filled/64/FFFFFF/github.png" alt="github" />
+                            </a>
                             <a href="https://www.linkedin.com/in/aurosish-rout-2998aa253/"><img width="48" height="48"
                                     src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" /></a>
                             <a href="https://www.upwork.com/freelancers/~01f1c5734144940692"><img width="48" height="48"
@@ -728,8 +843,26 @@
             </div>
 
             <div id="mainProfile" class="bg-light">
-                fdhjkfsjk
+                <br>
+                <!-- <div id="intro">
+                    <p style="color: #000000;font-size: 2rem;font-weight: bold;">
 
+                        Hello , i am Aurosish Rout 
+                        <br>
+                        full-stack webdeveloper/>
+                    </p>
+                </div> -->
+
+                <section class="hero">
+                    <div class="hero-container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Aurosish Rout</h1>
+                            <h2 class="hero-subtitle">Full-Stack Web Developer</h2>
+                            <p class="hero-text">Cuttack, Odisha, India</p>
+                            <a href="path/to/resume.pdf" class="hero-button">Resume</a>
+                        </div>
+                    </div>
+                </section>
             </div>
 
 
@@ -740,6 +873,15 @@
         </div>
 
         <script>
+
+            function conct(x) {
+                if (x == 'msg') {
+                    window.location.href = "/";
+                } else if (x == 'res') {
+                    window.location.href = "/";
+
+                }
+            }
 
 
             // border: solid 1px #233140;
