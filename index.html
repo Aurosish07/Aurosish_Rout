@@ -199,11 +199,145 @@
             overflow: hidden;
 
 
+
+
         }
 
         #intro {
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            /* align-items:normal; */
+        }
+
+
+
+
+
+
+
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #Pintro {
+            display: flex;
+            justify-content: center;
+        }
+
+        #smIntro {
             text-align: center;
         }
+
+        #smIntro p {
+            color: #000000;
+            font-size: 1.3rem;
+            animation-duration: 1.5s;
+            animation-name: blink;
+
+        }
+
+
+
+
+
+
+        @keyframes blinkBtn {
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(-0px);
+                opacity: 1;
+            }
+        }
+
+        #smIntro button {
+            background-color: #6c63ff;
+            border-color: #6c63ff;
+            color: white;
+            font-family: 'poppins', sans-serif;
+            width: 12rem;
+            height: 3rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: large;
+            display: inline-block;
+            animation-name: blinkBtn;
+            animation-duration: 1.5s;
+        }
+
+
+        #btnX :hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            background-color: #6058f4;
+        }
+
+
+
+        #i1 {
+            display: flex;
+            justify-content: start;
+            margin-left:15%;
+
+        }
+
+        #i2 {
+            display: flex;
+            margin-left: 41%;
+            /* justify-content:end; */
+            /* margin-right: 9rem; */
+        }
+
+
+        #i1 p,
+        #i2 p {
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        #i1 p {
+            animation-name: slideInFromLeft;
+        }
+
+        #i2 p {
+            animation-name: slideInFromRight;
+        }
+
+
 
 
 
@@ -225,8 +359,9 @@
             /* padding-top: 2rem; */
             max-width: 45%;
             max-height: 45%;
-            border: solid 4px #6c63ff;
+            border: solid 3px #6c63ff;
             border-radius: 45%;
+            background-color: #6c63ff;
 
         }
 
@@ -270,7 +405,9 @@
         #resume :hover {
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             transform: translateY(-3px);
+
         }
+
 
         .data {
             text-decoration: none;
@@ -491,57 +628,6 @@
             box-shadow: none;
             transform: translateY(1px);
         }
-
-
-
-        .hero {
-
-            padding: 80px 0;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-
-
-        .hero-content {
-            flex: 1;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #6c63ff;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-button {
-            background-color: #6c63ff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero-button:hover {
-            background-color: #5a50a5;
-        }
     </style>
 </head>
 
@@ -732,8 +818,7 @@
                                         Summerize Gpt
                                     </span>
                                     <button class="projectView" style="font-size: 1rem;" class="projectBtn">
-                                        <a
-                                            href="https://future-vision.live/"
+                                        <a href="https://future-vision.live/"
                                             style="text-decoration: none;color: white;">
                                             View
                                             Now
@@ -753,8 +838,7 @@
                                         A.I Quiz
                                     </span>
                                     <button class="projectView" style="font-size: 1rem;" class="projectBtn">
-                                        <a
-                                            href="https://future-vision.live/"
+                                        <a href="https://future-vision.live/"
                                             style="text-decoration: none;color: white;">
                                             View
                                             Now
@@ -774,12 +858,11 @@
                                         Weather App
                                     </span>
                                     <button class="projectView" style="font-size: 1rem;" class="projectBtn">
-                                        <a
-                                        href="https://future-vision.live/"
-                                        style="text-decoration: none;color: white;">
-                                        View
-                                        Now
-                                    </a>
+                                        <a href="https://future-vision.live/"
+                                            style="text-decoration: none;color: white;">
+                                            View
+                                            Now
+                                        </a>
                                     </button>
                                     <span class="spanText4">This weather app, powered by the OpenWeatherMap API,
                                         provides real-time weather data for your current location or any location you
@@ -844,124 +927,152 @@
 
             <div id="mainProfile" class="bg-light">
                 <br>
-                <!-- <div id="intro">
-                    <p style="color: #000000;font-size: 2rem;font-weight: bold;">
+                <br>
+                <div id="intro">
+                    <!-- <br> -->
 
-                        Hello , i am Aurosish Rout 
-                        <br>
-                        full-stack webdeveloper/>
-                    </p>
-                </div> -->
+                    <div id="i1">
 
-                <section class="hero">
-                    <div class="hero-container">
-                        <div class="hero-content">
-                            <h1 class="hero-title">Aurosish Rout</h1>
-                            <h2 class="hero-subtitle">Full-Stack Web Developer</h2>
-                            <p class="hero-text">Cuttack, Odisha, India</p>
-                            <a href="path/to/resume.pdf" class="hero-button">Resume</a>
+                        <p style="color: #000000;font-size: 2rem;font-weight: bold;">
+                            < Hello , I am <span style="color: #6c63ff;">
+
+                                Aurosish Rout
+                                </span>
+
+                        </p>
+                    </div>
+
+                    <!-- <br> -->
+                    <div id="i2">
+
+                        <p style="color: #000000;font-size: 2rem;font-weight: bold;">
+                            < i <span style="color: #6c63ff;">Develope/></span> end-to-end for web />
+                        </p>
+
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div id="PIntro">
+
+                        <div id="smIntro">
+                            <p>i am a Full Stack Developer driven by a passion for creating seamless
+                                digital experiences. With expertise in both frontend and backend technologies,From
+                                conceptualization to deployment, I bring creativity and technical prowess to every
+                                project,
+                                ensuring they not only meet but exceed expectations.
+                            </p>
+
+                            <br>
+                            <br>
+                            <a href="/" id="btnX">
+                                <button>Contact Me</button>
+                            </a>
                         </div>
                     </div>
-                </section>
+
+
+
+                </div>
+
+
+
+
+
             </div>
 
+            <script>
+
+                function conct(x) {
+                    if (x == 'msg') {
+                        window.location.href = "/";
+                    } else if (x == 'res') {
+                        window.location.href = "/";
+
+                    }
+                }
+
+
+                // border: solid 1px #233140;
+                // height: min - content;
+                // border - bottom - color: #233140;
+                // background - color: #233140;
+                // box - shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                let box1 = document.querySelector(".project1");
+                let box2 = document.querySelector(".project2");
+                let box3 = document.querySelector(".project3");
+                let box4 = document.querySelector(".project4");
+
+                box1.addEventListener('mouseover', function () {
+                    box2.style.height = "min-content";
+                })
+                box2.addEventListener('mouseover', function () {
+                    box1.style.height = "min-content";
+                })
+
+                box3.addEventListener('mouseover', function () {
+                    box4.style.height = "min-content";
+                })
+                box4.addEventListener('mouseover', function () {
+                    box3.style.height = "min-content";
+                })
+
+
+                function toggleMobileNav() {
+                    var mobileNav = document.getElementById('mobileNav');
+                    let icon = document.querySelector("#icon");
+                    icon.classList.toggle("rotate");
+                    // mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+                    mobileNav.classList.toggle("animate")
+
+                }
+
+                let id = document.querySelector("#dot");
+                let text = " ...........";
+                let splitText = text.split("");
+
+                let interval = setInterval(writeText, 200);
+                let i = 0;
+                let direction = 1;
+
+                function writeText() {
+                    if (i === splitText.length) {
+                        direction = -1;
+                        id.innerHTML = "";
+                    } else if (i === 0 && direction === -1) {
+                        direction = 1;
+                    }
+
+                    if (direction === 1) {
+                        id.innerHTML += splitText[i];
+                        i++;
+                    } else {
+                        id.innerHTML = id.innerHTML.slice(0, -1);
+                        i--;
+                    }
+
+                    if (i === 0 && direction === 1) {
+                        clearInterval(interval); // If you want to stop the animation after one full cycle
+                    }
+                }
 
 
 
 
 
-        </div>
 
-        <script>
 
-            function conct(x) {
-                if (x == 'msg') {
+
+
+
+                function go() {
                     window.location.href = "/";
-                } else if (x == 'res') {
-                    window.location.href = "/";
-
-                }
-            }
-
-
-            // border: solid 1px #233140;
-            // height: min - content;
-            // border - bottom - color: #233140;
-            // background - color: #233140;
-            // box - shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            let box1 = document.querySelector(".project1");
-            let box2 = document.querySelector(".project2");
-            let box3 = document.querySelector(".project3");
-            let box4 = document.querySelector(".project4");
-
-            box1.addEventListener('mouseover', function () {
-                box2.style.height = "min-content";
-            })
-            box2.addEventListener('mouseover', function () {
-                box1.style.height = "min-content";
-            })
-
-            box3.addEventListener('mouseover', function () {
-                box4.style.height = "min-content";
-            })
-            box4.addEventListener('mouseover', function () {
-                box3.style.height = "min-content";
-            })
-
-
-            function toggleMobileNav() {
-                var mobileNav = document.getElementById('mobileNav');
-                let icon = document.querySelector("#icon");
-                icon.classList.toggle("rotate");
-                // mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
-                mobileNav.classList.toggle("animate")
-
-            }
-
-            let id = document.querySelector("#dot");
-            let text = " ...........";
-            let splitText = text.split("");
-
-            let interval = setInterval(writeText, 200);
-            let i = 0;
-            let direction = 1;
-
-            function writeText() {
-                if (i === splitText.length) {
-                    direction = -1;
-                    id.innerHTML = "";
-                } else if (i === 0 && direction === -1) {
-                    direction = 1;
                 }
 
-                if (direction === 1) {
-                    id.innerHTML += splitText[i];
-                    i++;
-                } else {
-                    id.innerHTML = id.innerHTML.slice(0, -1);
-                    i--;
-                }
 
-                if (i === 0 && direction === 1) {
-                    clearInterval(interval); // If you want to stop the animation after one full cycle
-                }
-            }
-
-
-
-
-
-
-
-
-
-
-            function go() {
-                window.location.href = "/";
-            }
-
-
-        </script>
+            </script>
 </body>
 
 </html>
