@@ -16,6 +16,7 @@
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
 
@@ -179,12 +180,13 @@
 
         #sideProfile {
 
-            width: 28%;
-            height: 100vh;
+            width: 29%;
+            height: 90vh;
             /* background-color: #454b52; */
             /* background-color: #343a40; */
             background-color: #233140;
             overflow-y: scroll;
+            scroll-behavior: smooth;
             color: white;
 
         }
@@ -192,15 +194,16 @@
 
 
         #mainProfile {
-            width: 70%;
-            height: 100vh;
-            /* background-color: #f0f0f0; */
+            width: 75%;
+            height: 90vh;
             background-color: #f5f5f5;
-            overflow: hidden;
+            scroll-behavior: smooth;
+            overflow: scroll;
+            /* padding-top: 2rem; */
+        }
 
-
-
-
+        #mainProfile::-webkit-scrollbar {
+            /* display: none; */
         }
 
         #intro {
@@ -311,7 +314,7 @@
         #i1 {
             display: flex;
             justify-content: start;
-            margin-left:15%;
+            margin-left: 15%;
 
         }
 
@@ -634,7 +637,7 @@
 <body>
 
     <div id="main">
-        <nav class="navbar navbar-dark" id="div">
+        <nav class="navbar navbar-dark sticky-top" id="div">
             <div class="container-fluid">
                 <div id="center" onclick="go()">
 
@@ -647,7 +650,7 @@
                 </div>
 
                 <div id="section" class=" d-md-flex">
-                    <div id="About"><a href="" style="color:#333333">About</a></div>
+                    <div id="About"><a href="/#Rabout" style="color:#333333">About</a></div>
                     <div id="Projects"><a href="" style="color:#333333">Projects</a></div>
                     <div id="Skills"><a href="" style="color:#333333">Skills</a></div>
                     <div id="Conatact"><a href="" style="color:#333333">Conatact</a></div>
@@ -973,6 +976,64 @@
                         </div>
                     </div>
 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <section id="Rabout">
+                        <div id="insabout">
+                            <p style="color: #000000;font-size: 1.5rem;">About</p>
+                            <br>
+                            <br>
+                            <p id="desc" style="color: black;">
+                                As a dedicated Full Stack Developer, Aurosish Rout is passionate about crafting
+                                innovative digital solutions that seamlessly integrate frontend and backend
+                                technologies. With a keen eye for detail and a commitment to excellence, Aurosish brings
+                                a wealth of experience to every project, from conception to deployment.
+
+                                Expertise in Frontend Development
+
+                                Aurosish possesses extensive expertise in frontend development, utilizing cutting-edge
+                                technologies such as HTML5, CSS3, and JavaScript to create captivating user interfaces.
+                                With a focus on user experience design principles, Aurosish ensures that each frontend
+                                element is not only visually appealing but also intuitive and user-friendly.
+
+                                Proficiency in Backend Technologies
+
+                                In addition to frontend development, Aurosish is proficient in a variety of backend
+                                technologies, including Node.js, Express.js, and MongoDB. Leveraging his strong
+                                understanding of server-side programming and database management, Aurosish builds robust
+                                backend systems that power dynamic web applications with efficiency and reliability.
+
+                                Collaborative Problem Solver
+
+                                Aurosish thrives in collaborative environments, working closely with cross-functional
+                                teams to solve complex technical challenges and deliver high-quality solutions on time
+                                and within budget. With excellent communication skills and a proactive approach,
+                                Aurosish fosters productive working relationships and ensures alignment between
+                                technical requirements and business objectives.
+
+                                Continuous Learning and Growth
+
+                                Driven by a passion for learning and innovation, Aurosish stays abreast of the latest
+                                advancements in technology and industry best practices. Whether exploring new
+                                frameworks, mastering emerging programming languages, or honing existing skills,
+                                Aurosish is committed to continuous growth and development, ensuring that his solutions
+                                remain at the forefront of industry standards.
+
+                                Aurosish Rout - Full Stack Developer
+
+                                Aurosish Rout is dedicated to pushing the boundaries of possibility in the world of web
+                                development. With a strong foundation in both frontend and backend technologies, a
+                                collaborative mindset, and a relentless pursuit of excellence, Aurosish is poised to
+                                make a lasting impact in the digital landscape.
+                            </p>
+                        </div>
+
+                    </section>
+
 
 
                 </div>
@@ -984,6 +1045,10 @@
             </div>
 
             <script>
+
+                function go() {
+                    window.location.href = "/";
+                }
 
                 function conct(x) {
                     if (x == 'msg') {
@@ -1061,15 +1126,23 @@
 
 
 
+                // document.addEventListener('DOMContentLoaded', () => {
+
+
+                //     let link = document.querySelector("#About a");
+                //     let main = document.querySelector("#mainProfile");
+                //     let side = document.querySelector("#sideProfile");
+
+                //     link.addEventListener("click", () => {
+                //         main.style.paddingTop = "2rem";
+                //         side.style.paddingTop = "2rem";
+                //     })
+
+
+                // });
 
 
 
-
-
-
-                function go() {
-                    window.location.href = "/";
-                }
 
 
             </script>
