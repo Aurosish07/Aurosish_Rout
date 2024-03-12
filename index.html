@@ -8,630 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+    <link rel="stylesheet" href="styles.css">
 
-
-
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-
-        #div {
-
-            width: 100%;
-            height: 4rem;
-            /* border-bottom: solid 2px gray; */
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        #center {
-
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            margin-left: 1rem;
-            cursor: pointer;
-        }
-
-        #section {
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row;
-            margin-right: 2rem;
-
-        }
-
-        #section div {
-            margin-left: 3.5rem;
-            font-size: 1.3rem;
-            font-family: 'poppins', sans-serif;
-            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-            /* font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; */
-
-
-
-            cursor: pointer;
-            /* font-weight: bold; */
-            text-decoration: underline;
-        }
-
-        #section div a {
-
-            /* color: white; */
-            text-decoration: none;
-        }
-
-        #section div a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 0.15rem;
-        }
-
-
-        /* Styles for mobile nav */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 100%;
-            width: 70%;
-            height: 65vh;
-            background-color: #23282d;
-            padding: 20px;
-            text-align: center;
-            /* display: none; */
-            margin-top: 62px;
-            font-family: 'poppins', sans-serif;
-            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-            transition: all 1.5s ease;
-        }
-
-
-        .animate {
-            transform: translateX(-100%);
-        }
-
-
-
-        .mobile-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            padding: 20px 0;
-            display: block;
-        }
-
-        .mobile-nav a:hover {
-
-            text-decoration: underline;
-            text-decoration-thickness: 0.15rem;
-
-        }
-
-        .hamburger-menu {
-            display: none;
-            cursor: pointer;
-        }
-
-        #icon {
-            transition: transform 1s;
-        }
-
-        .rotate {
-            transform: rotate(90deg);
-
-        }
-
-        @media (min-width:766px) and (max-width:789px) {
-
-            #div {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            #section {
-                margin-right: -0.3rem;
-            }
-
-
-        }
-
-        @media (max-width: 767px) {
-
-
-            #div {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            #section {
-                display: none;
-            }
-
-            .hamburger-menu {
-                display: block;
-                margin-right: 20px;
-                position: relative;
-            }
-        }
-
-
-        #hero {
-            display: flex;
-
-        }
-
-
-        .navbar-dark {
-            /* color:#333333; */
-            background-color: #f5f5f5;
-            font-weight: 500;
-            text-decoration: none;
-            border-bottom: none;
-            color: #f5f5f5;
-        }
-
-        #sideProfile {
-
-            width: 29%;
-            height: 90vh;
-            /* background-color: #454b52; */
-            /* background-color: #343a40; */
-            background-color: #233140;
-            overflow-y: scroll;
-            scroll-behavior: smooth;
-            color: white;
-
-        }
-
-
-
-        #mainProfile {
-            width: 75%;
-            height: 90vh;
-            background-color: #f5f5f5;
-            scroll-behavior: smooth;
-            overflow: scroll;
-            /* padding-top: 2rem; */
-        }
-
-        #mainProfile::-webkit-scrollbar {
-            /* display: none; */
-        }
-
-        #intro {
-            /* text-align: center; */
-            display: flex;
-            flex-direction: column;
-            /* align-items:normal; */
-        }
-
-
-
-
-
-
-
-
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInFromRight {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        #Pintro {
-            display: flex;
-            justify-content: center;
-        }
-
-        #smIntro {
-            text-align: center;
-        }
-
-        #smIntro p {
-            color: #000000;
-            font-size: 1.3rem;
-            animation-duration: 1.5s;
-            animation-name: blink;
-
-        }
-
-
-
-
-
-
-        @keyframes blinkBtn {
-            0% {
-                transform: translateY(-10px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(-0px);
-                opacity: 1;
-            }
-        }
-
-        #smIntro button {
-            background-color: #6c63ff;
-            border-color: #6c63ff;
-            color: white;
-            font-family: 'poppins', sans-serif;
-            width: 12rem;
-            height: 3rem;
-            border-radius: 5px;
-            text-align: center;
-            font-size: large;
-            display: inline-block;
-            animation-name: blinkBtn;
-            animation-duration: 1.5s;
-        }
-
-
-        #btnX :hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            background-color: #6058f4;
-        }
-
-
-
-        #i1 {
-            display: flex;
-            justify-content: start;
-            margin-left: 15%;
-
-        }
-
-        #i2 {
-            display: flex;
-            margin-left: 41%;
-            /* justify-content:end; */
-            /* margin-right: 9rem; */
-        }
-
-
-        #i1 p,
-        #i2 p {
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-        }
-
-        #i1 p {
-            animation-name: slideInFromLeft;
-        }
-
-        #i2 p {
-            animation-name: slideInFromRight;
-        }
-
-
-
-
-
-        #info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #pic {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-
-
-        #pic img {
-            /* padding-top: 2rem; */
-            max-width: 45%;
-            max-height: 45%;
-            border: solid 3px #6c63ff;
-            border-radius: 45%;
-            background-color: #6c63ff;
-
-        }
-
-        p {
-            /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-            font-family: 'poppins', sans-serif;
-            font-size: 1.3rem;
-            text-align: center;
-            color: #ece7e7;
-            /* padding-left:20%; */
-            /* background-color:deepskyblue; */
-
-        }
-
-        #card {
-            text-align: center;
-        }
-
-        #data {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-
-        }
-
-
-        #msg,
-        #resume {
-            background-color: #6c63ff;
-            border-color: #6c63ff;
-            color: white;
-            font-family: 'poppins', sans-serif;
-            width: 40%;
-            height: 3rem;
-            border-radius: 5px;
-            text-align: center;
-            font-size: large;
-        }
-
-        #msg :hover,
-        #resume :hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transform: translateY(-3px);
-
-        }
-
-
-        .data {
-            text-decoration: none;
-            color: white;
-            text-align: center;
-        }
-
-
-
-        #cardAbout,
-        .projectView {
-
-            background-color: var(--dark);
-            color: white;
-            font-family: 'poppins', sans-serif;
-            border-radius: 5px;
-            text-align: center;
-            font-size: large;
-        }
-
-        #topskills {
-            /* display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            column-gap: 1.5rem; */
-            width: 100%;
-
-            height: 15rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            /* flex-direction: column; */
-            background-color: var(--dark);
-            border-color: var(--dark);
-
-        }
-
-
-
-        #skill img {
-            width: 5rem;
-            height: 5rem;
-
-        }
-
-        #skill,
-        #skill1 {
-            height: 5rem;
-            border: solid 1px #233140;
-            background-color: #233140;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            flex: 1 0 calc(80% / 4);
-            box-sizing: border-box;
-            align-items: center;
-            margin-left: 5px;
-            margin-bottom: 2rem;
-
-        }
-
-
-
-
-        #skill.ExtraView,
-        #skill1.ExtraView1 {
-            /* margin-top: 0.8rem; */
-            height: 3rem;
-            width: 50%;
-            background-color: #233140;
-        }
-
-        #skill.ExtraView a p,
-        #skill1.ExtraView1 a p {
-            margin-top: 6%;
-        }
-
-        #mainProject {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: normal;
-            flex-wrap: wrap;
-            /* border: solid 1px #233140;
-            background-color: #233140;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease; */
-        }
-
-        .project1,
-        .project2,
-        .project3,
-        .project4 {
-            box-sizing: border-box;
-            width: fit-content;
-            display: flex;
-            flex-direction: column;
-            border: solid 1px #233140;
-            background-color: #233140;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            margin-bottom: 1rem;
-
-
-
-        }
-
-        .spanText1,
-        .spanText2,
-        .spanText3,
-        .spanText4 {
-            display: none;
-            text-align: center;
-            width: 12rem;
-            transition: all 2s ease;
-        }
-
-        #link {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
-
-        }
-
-        #link a {
-            flex-basis: calc(25% - 10px);
-            margin: 5px;
-        }
-
-        @media screen and (max-width:1237px) {
-            #topskill div {
-                height: 5rem;
-                border: solid 1px #233140;
-                background-color: #233140;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                transition: all 0.3s ease;
-                box-sizing: border-box;
-                margin-left: 5px;
-
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                flex-basis: calc(100%, 3);
-
-            }
-
-            #skill.ExtraView {
-                height: 5rem;
-
-            }
-
-        }
-
-        @media screen and (max-width:1368px) {
-
-            #project {
-                flex-direction: column;
-                /* align-items: center; */
-                gap: 0.5rem;
-                width: 50rem;
-            }
-
-            #mainProject {
-                justify-content: center;
-            }
-
-            .projectBtn {
-                display: none;
-            }
-
-            #spanText {
-                display: block;
-                margin-bottom: 1em;
-            }
-        }
-
-        #skill:hover,
-        #skill1:hover,
-        #link a :hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transform: translateY(-3px);
-        }
-
-        #skill :active,
-        #skill1 :active,
-        #link a :hover {
-            /* box-shadow: none; */
-            transform: translateY(1px);
-        }
-
-
-        .project1:hover,
-        .project2:hover,
-        .project3:hover,
-        .project4:hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transform: translateY(-3px);
-        }
-
-
-
-
-
-        .project1:hover span.spanText1,
-        .project2:hover span.spanText2,
-        .project3:hover span.spanText3,
-        .project4:hover span.spanText4 {
-            display: block;
-
-        }
-
-        .project1 :active,
-        .project2 :active,
-        .project3 :active,
-        .project4 :active {
-            box-shadow: none;
-            transform: translateY(1px);
-        }
-    </style>
 </head>
 
 <body>
@@ -651,9 +29,9 @@
 
                 <div id="section" class=" d-md-flex">
                     <div id="About"><a href="/#Rabout" style="color:#333333">About</a></div>
-                    <div id="Projects"><a href="" style="color:#333333">Projects</a></div>
-                    <div id="Skills"><a href="" style="color:#333333">Skills</a></div>
-                    <div id="Conatact"><a href="" style="color:#333333">Conatact</a></div>
+                    <div id="Projects"><a href="#projectsection" style="color:#333333">Projects</a></div>
+                    <div id="Skills"><a href="#skillsection" style="color:#333333">Skills</a></div>
+                    <div id="Conatact"><a href="#contactsection" style="color:#333333">Conatact</a></div>
                     <div id="Blog"><a href="" style="color:#333333">Blogs</a></div>
                 </div>
 
@@ -667,10 +45,10 @@
 
         <!-- Mobile Navigation -->
         <nav class="mobile-nav" id="mobileNav">
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Skills</a>
-            <a href="#">Contact</a>
+            <a href="/#Rabout">About</a>
+            <a href="#projectsection">Projects</a>
+            <a href="#skillsection">Skills</a>
+            <a href="#contactsection">Contact</a>
             <a href="#">Blogs</a>
         </nav>
 
@@ -931,114 +309,264 @@
             <div id="mainProfile" class="bg-light">
                 <br>
                 <br>
-                <div id="intro">
-                    <!-- <br> -->
+                <div id="Home" class="same">
 
-                    <div id="i1">
+                    <div id="intro">
+                        <!-- <br> -->
 
-                        <p style="color: #000000;font-size: 2rem;font-weight: bold;">
-                            < Hello , I am <span style="color: #6c63ff;">
+                        <div id="i1">
 
-                                Aurosish Rout
-                                </span>
+                            <p style="color: #000000;font-size: 2rem;font-weight: bold;">
+                                < Hello , I am <span style="color: #6c63ff;">
 
-                        </p>
-                    </div>
+                                    Aurosish Rout
+                                    </span>
 
-                    <!-- <br> -->
-                    <div id="i2">
-
-                        <p style="color: #000000;font-size: 2rem;font-weight: bold;">
-                            < i <span style="color: #6c63ff;">Develope/></span> end-to-end for web />
-                        </p>
-
-                    </div>
-
-                    <br>
-                    <br>
-                    <br>
-
-                    <div id="PIntro">
-
-                        <div id="smIntro">
-                            <p>i am a Full Stack Developer driven by a passion for creating seamless
-                                digital experiences. With expertise in both frontend and backend technologies,From
-                                conceptualization to deployment, I bring creativity and technical prowess to every
-                                project,
-                                ensuring they not only meet but exceed expectations.
-                            </p>
-
-                            <br>
-                            <br>
-                            <a href="/" id="btnX">
-                                <button>Contact Me</button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-
-
-                    <section id="Rabout">
-                        <div id="insabout">
-                            <p style="color: #000000;font-size: 1.5rem;">About</p>
-                            <br>
-                            <br>
-                            <p id="desc" style="color: black;">
-                                As a dedicated Full Stack Developer, Aurosish Rout is passionate about crafting
-                                innovative digital solutions that seamlessly integrate frontend and backend
-                                technologies. With a keen eye for detail and a commitment to excellence, Aurosish brings
-                                a wealth of experience to every project, from conception to deployment.
-
-                                Expertise in Frontend Development
-
-                                Aurosish possesses extensive expertise in frontend development, utilizing cutting-edge
-                                technologies such as HTML5, CSS3, and JavaScript to create captivating user interfaces.
-                                With a focus on user experience design principles, Aurosish ensures that each frontend
-                                element is not only visually appealing but also intuitive and user-friendly.
-
-                                Proficiency in Backend Technologies
-
-                                In addition to frontend development, Aurosish is proficient in a variety of backend
-                                technologies, including Node.js, Express.js, and MongoDB. Leveraging his strong
-                                understanding of server-side programming and database management, Aurosish builds robust
-                                backend systems that power dynamic web applications with efficiency and reliability.
-
-                                Collaborative Problem Solver
-
-                                Aurosish thrives in collaborative environments, working closely with cross-functional
-                                teams to solve complex technical challenges and deliver high-quality solutions on time
-                                and within budget. With excellent communication skills and a proactive approach,
-                                Aurosish fosters productive working relationships and ensures alignment between
-                                technical requirements and business objectives.
-
-                                Continuous Learning and Growth
-
-                                Driven by a passion for learning and innovation, Aurosish stays abreast of the latest
-                                advancements in technology and industry best practices. Whether exploring new
-                                frameworks, mastering emerging programming languages, or honing existing skills,
-                                Aurosish is committed to continuous growth and development, ensuring that his solutions
-                                remain at the forefront of industry standards.
-
-                                Aurosish Rout - Full Stack Developer
-
-                                Aurosish Rout is dedicated to pushing the boundaries of possibility in the world of web
-                                development. With a strong foundation in both frontend and backend technologies, a
-                                collaborative mindset, and a relentless pursuit of excellence, Aurosish is poised to
-                                make a lasting impact in the digital landscape.
                             </p>
                         </div>
 
-                    </section>
+                        <!-- <br> -->
+                        <div id="i2">
+
+                            <p style="color: #000000;font-size: 2rem;font-weight: bold;">
+                                < i <span style="color: #6c63ff;">Develope/></span> end-to-end for web />
+                            </p>
+
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <div id="PIntro">
+
+                            <div id="smIntro">
+                                <p>i am a Full Stack Developer driven by a passion for creating seamless
+                                    digital experiences. With expertise in both frontend and backend technologies,From
+                                    conceptualization to deployment, I bring creativity and technical prowess to every
+                                    project,
+                                    ensuring they not only meet but exceed expectations.
+                                </p>
+
+                                <br>
+                                <br>
+                                <a href="/" id="btnX">
+                                    <button>Contact Me</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <section id="Rabout">
+                            <div id="insabout">
+                                <p style="color: #000000;font-size: 1.7rem;font-weight:500;">About</p>
+                                <br>
+                                <br>
+                                <p id="desc" style="color: black;">
+                                <p style="color: #000000;font-size: 1.5rem;">
+
+                                    As a dedicated Full Stack Developer, I am passionate about crafting
+                                    innovative digital solutions that seamlessly integrate frontend and backend
+                                    technologies.
+                                </p>
+                                <br>
+                                <br>
+                                <br>
+                                <p style="color: #6058f4;" class="headingdesc"> Expertise in Frontend Development</p>
+
+                                <p style="color: #000000;" class="headingnormal">
+
+                                    i possesses extensive expertise in frontend development, utilizing cutting-edge
+                                    technologies such as HTML5, CSS3, and JavaScript to create captivating user
+                                    interfaces.
+                                    With a focus on user experience design principles, i ensures that each frontend
+                                    element is not only visually appealing but also intuitive and user-friendly.
+                                </p>
+
+
+                                <br>
+                                <br>
+
+
+                                <p style="color: #6058f4;" class="headingdesc"> Proficiency in Backend Technologies</p>
+
+
+                                <p style="color: #000000;" class="headingnormal">
+                                    In addition to frontend development, i am proficient in a variety of backend
+                                    technologies, including Node.js, Express.js, and MongoDB. Leveraging his strong
+                                    understanding of server-side programming and database management, i can build robust
+                                    backend systems that power dynamic web applications with efficiency and reliability.
+
+                                </p>
+
+                                <br>
+                                <br>
+
+                                <p style="color: #6058f4;" class="headingdesc"> Collaborative Problem Solver </p>
+
+
+
+                                <p style="color: #000000;" class="headingnormal">
+                                    i thrives in collaborative environments, working closely with cross-functional
+                                    teams to solve complex technical challenges and deliver high-quality solutions on
+                                    time
+                                    and within budget. With excellent communication skills and a proactive approach,
+                                    i can fosters productive working relationships and ensures alignment between
+                                    technical requirements and business objectives.
+                                </p>
+
+                                <br>
+                                <br>
+
+                                </p>
+                            </div>
+
+
+
+
+
+
+                            <div class="timeline-container">
+
+                                <ul class="timeline timeline_right">
+                                    <div class="timeline-container2">
+
+                                        <img width="50" height="50"
+                                            src="https://img.icons8.com/pulsar-line/48/6058f4/briefcase-settings.png"
+                                            alt="briefcase-settings" />
+                                        <p style="color: #000000;font-size: 1.7rem;font-weight: 500;color:#6058f4;">
+                                            Experience</p>
+                                    </div>
+
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp">2008 - 2012</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Bachelor's Degree in Computer Science</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp">2013 - 2015</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Master's Degree in Software Engineering</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp">2013 - 2015</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Master's Degree in Software Engineering</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                                <ul class="timeline timeline_left">
+                                    <div class="timeline-container2">
+
+                                        <img width="50" height="50"
+                                            src="https://img.icons8.com/pulsar-line/48/6058f4/education.png"
+                                            alt="education" />
+                                        <p style="color: #000000;font-size: 1.7rem;font-weight: 500;color:#6058f4;">
+                                            Education</p>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp timestamp_left">2008 - 2012</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Bachelor's Degree in Computer Science</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp timestamp_left">2013 - 2015</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Master's Degree in Software Engineering</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <div class="timestamp timestamp_left">2013 - 2015</div>
+                                        <div class="timeline-content">
+                                            <h4>Education</h4>
+                                            <p>Master's Degree in Software Engineering</p>
+                                            <p>University of Example</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+
+
+
+                    </div>
+
+                    <!-- This is starting of project section -->
+
+
+                    <div id="projectsection" class="same">
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius magnam corrupti dignissimos
+                        soluta pariatur sequi non perferendis nostrum voluptatibus reprehenderit quos aliquam nemo, quod
+                        qui molestiae dolore. Ut, dignissimos odio.
+
+                    </div>
+
+
+
+
+
+                    <!-- This is starting of skill section -->
+
+                    <div id="skillsection" class="same">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatibus suscipit
+                        cumque veniam officiis quae ipsam quibusdam aliquid dolores quaerat ad reprehenderit aspernatur
+                        nemo, eius unde totam consectetur impedit cum.
+                    </div>
+
+
+
+                    <!-- This is starting of contact section -->
+
+
+                    <div id="contactsection" class="same">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae neque, qui repellendus
+                        eaque reprehenderit eum itaque voluptatibus tempore adipisci sed hic perferendis accusantium
+                        libero? Maxime eos ullam facilis ea.
+                    </div>
+
+
 
 
 
                 </div>
-
-
 
 
 
@@ -1143,7 +671,40 @@
 
 
 
+                document.addEventListener('DOMContentLoaded', () => {
+                    let side = document.querySelector("#sideProfile");
 
+                    setTimeout(function () {
+                        side.scrollTo({
+                            top: 100,
+                            behavior: 'smooth'
+                        });
+
+                        setTimeout(function () {
+                            side.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        }, 1500);
+                    }, 1000);
+
+                });
+
+
+
+                const workItems = document.querySelectorAll('.work-item');
+
+                workItems.forEach((item) => {
+                    item.addEventListener('click', () => {
+                        // Remove 'active' class from all items
+                        workItems.forEach((item) => {
+                            item.classList.remove('active');
+                        });
+
+                        // Add 'active' class to the clicked item
+                        item.classList.add('active');
+                    });
+                });
 
             </script>
 </body>
