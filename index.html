@@ -37,19 +37,18 @@
 
                 <!-- Hamburger Menu Icon -->
                 <div class="hamburger-menu" onclick="toggleMobileNav()">
-                    <img width="25" height="25" src="https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png"
-                        alt="Menu" id="icon">
+                    <img width="40" height="35" src="https://img.icons8.com/sf-black/128/000000/menu.png" alt="Menu"
+                        id="icon">
                 </div>
             </div>
         </nav>
-
         <!-- Mobile Navigation -->
         <nav class="mobile-nav" id="mobileNav">
-            <a href="/#Rabout">About</a>
+            <a href="/#Rabout" id="mob_about">About</a>
             <a href="#projectsection">Projects</a>
             <a href="#skillsection">Skills</a>
             <a href="#contactsection">Contact</a>
-            <a href="#">Blogs</a>
+            <a href="#">Blog</a>
         </nav>
 
 
@@ -100,7 +99,10 @@
                             Experienced Full Stack Developer and programmer passionate about creating innovative web
                             apps<span id="dot"> </span>
                         </p>
-                        <button id="cardAbout">View more</button>
+                        <a href="/#Rabout">
+
+                            <button id="cardAbout">View more</button>
+                        </a>
 
 
                         <br>
@@ -153,7 +155,7 @@
                             </div>
                             <br>
                             <div id="skill" class="ExtraView">
-                                <a href="/index.html" style="text-decoration: none;">
+                                <a href="#skillsection" style="text-decoration: none;" id="moreskill">
 
                                     <p style="font-size: 1.5rem;color: rgb(232, 227, 227);font-weight: 500;">10+ more
                                         skills
@@ -257,7 +259,7 @@
 
                             </div>
                             <div id="skill1" class="ExtraView1" style="width: 100%;">
-                                <a href="/index.html" style="text-decoration: none;">
+                                <a href="#projectsection" style="text-decoration: none;" id="moreProject">
 
                                     <p style="font-size: 1.5rem;color: rgb(232, 227, 227);font-weight: 500;">10+ more
                                         projects
@@ -549,11 +551,13 @@
 
                             <img src="/project_imges/gpt.png" width="250px" height="150px">
 
-                            <p style="color: #6c63ff;font-weight: 500;">Summaries Gpt</p>
+                            <p style="color: #6c63ff;font-weight: 500;">OCR-Gpt</p>
 
                             <p style="color: #000000;font-size:1rem;">
-                                This is a gpt 3.5 + ocr based site which can take your photo and summarize the text
-                                and you can able to ask any further question on your given photo
+
+                                This leading OCR platform, powered by GPT-3.5 + OCR, extracts and summarizes text and
+                                handwriting from photos,can also guess unclear portions using AI. It also answers
+                                user questions based on the extracted content.
                             </p>
                             <a href="https://summarize-gpt-qcsw.onrender.com" target="_blank"><button
                                     id="btnCheak">Cheak out<img width="25" height="25"
@@ -1080,14 +1084,25 @@
 
                 <div id="contactsection" class="same">
 
-                    contact section
+                    <p class="spiner" style="color: #0b2447ff;">Loading.......</p>
 
+                    <div class="visme_d" data-title="Untitled Project" data-url="x4vkrmqd-untitled-project"
+                        data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="49287"></div>
+                    <script id="visme-script" src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
                 </div>
 
 
 
 
                 <script>
+
+
+
+                    let projectDiv = document.querySelector("#projectsection");
+                    if (window.location.hash == "#projectsection" || window.location.hash == "#skillsection" || window.location.hash == "#contactsection") {
+                        document.querySelector("#Home").style.display = "none";
+                    }
+
 
                     function go() {
                         window.location.href = "/";
@@ -1222,16 +1237,73 @@
 
                     let link = document.querySelectorAll("#section div a.navBtn");
                     let home = document.querySelector("#Home");
+
                     link.forEach((id) => {
+
+
                         id.addEventListener("click", () => {
                             home.style.display = "none";
                         })
+
                     })
 
+                    let mobile_link = document.querySelectorAll("#mobileNav a");
+                    let mob_about = document.querySelector("#mob_about")
+                
+                    mobile_link.forEach((a) => {
+
+                        a.addEventListener("click", () => {
+
+                            home.style.display = "none";
+
+                        })
+                    })
+
+                    mob_about.addEventListener("click", () => {
+                        home.style.display = "block";
+                    })
+
+
+
+
                     let aboutLink = document.querySelector(".NavBtn");
+                    let cardAbout = document.querySelector("#cardAbout");
+
                     aboutLink.addEventListener("click", () => {
                         home.style.display = "block";
                     })
+
+                    cardAbout.addEventListener("click", () => {
+                        home.style.display = "block";
+                    })
+
+
+                    let skillmore = document.querySelector("#moreskill");
+                    skillmore.addEventListener("click", () => {
+                        home.style.display = "none";
+                    })
+
+                    let projectmore = document.querySelector("#moreProject");
+
+                    projectmore.addEventListener("click", () => {
+                        home.style.display = "none";
+                    })
+
+
+
+
+                    let spiner = document.querySelector(".spiner");
+
+                    document.body.addEventListener("click", (event) => {
+                        if (event.target.matches("a") && event.target.getAttribute('href') === '#contactsection') {
+                            setTimeout(() => {
+                                spiner.style.display = "none";
+                            }, 2000);
+                        }
+                    });
+
+
+
 
                 </script>
 </body>
