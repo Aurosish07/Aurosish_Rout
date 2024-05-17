@@ -343,16 +343,18 @@
                         <div id="PIntro">
 
                             <div id="smIntro">
-                                <p>i am a Full Stack Developer driven by a passion for creating seamless
-                                    digital experiences. With expertise in both frontend and backend technologies,From
-                                    conceptualization to deployment, I bring creativity and technical prowess to every
-                                    project,
-                                    ensuring they not only meet but exceed expectations.
+                                <p>As a versatile Full Stack Developer with a focus on Generative AI, I blend technical
+                                    expertise with creative problem-solving. Skilled in front-end, back-end, and
+                                    cutting-edge AI models, I craft intelligent solutions that fuse human ingenuity and
+                                    artificial intelligence. With a knack for elevating digital experiences, I unlock
+                                    new possibilities through the synergy of full-stack development and generative AI
+                                    capabilities. From concept to deployment, I deliver innovative applications that
+                                    transcend expectations.
                                 </p>
 
                                 <br>
                                 <br>
-                                <a href="./" id="btnX">
+                                <a href="#contactsection" id="btnX">
                                     <button>Contact Me</button>
                                 </a>
                             </div>
@@ -1249,7 +1251,7 @@
 
                     let mobile_link = document.querySelectorAll("#mobileNav a");
                     let mob_about = document.querySelector("#mob_about");
-                
+
                     mobile_link.forEach((a) => {
 
                         a.addEventListener("click", () => {
@@ -1286,6 +1288,11 @@
                     let projectmore = document.querySelector("#moreProject");
 
                     projectmore.addEventListener("click", () => {
+                        home.style.display = "none";
+                    })
+
+                    let contactabout = document.querySelector("#btnX");
+                    contactabout.addEventListener("click", () => {
                         home.style.display = "none";
                     })
 
