@@ -18,7 +18,7 @@
     <div id="main">
         <header>
 
-            <nav class="navbar navbar-dark sticky-top navbar-expand-md" id="div">
+            <nav class="navbar navbar-dark sticky-top" id="div">
                 <div class="container-fluid">
                     <div id="center" onclick="go()">
 
@@ -1128,6 +1128,7 @@
                     let projectDiv = document.querySelector("#projectsection");
                     if (window.location.hash == "#projectsection" || window.location.hash == "#skillsection" || window.location.hash == "#contactsection") {
                         document.querySelector("#Home").style.display = "none";
+                        // document.querySelector("#Home").style.height = "100vh";
                     }
 
 
@@ -1334,6 +1335,25 @@
                             }, 2000);
                         }
                     });
+
+
+
+
+                    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    //     anchor.addEventListener('click', function (e) {
+                    //         e.preventDefault();
+
+                    //         const targetId = this.getAttribute('href').substring(1);
+                    //         const targetElement = document.getElementById(targetId);
+
+                    //         if (targetElement) {
+                    //             window.scrollTo({
+                    //                 top: targetElement.offsetTop - document.querySelector('nav').offsetHeight,
+                    //                 behavior: 'smooth'
+                    //             });
+                    //         }
+                    //     });
+                    // });
 
 
                 </script>
