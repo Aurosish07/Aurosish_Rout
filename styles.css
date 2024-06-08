@@ -986,8 +986,78 @@ p {
 }
 
 @media (max-width: 500px) {
-    .timeline-icon {
+    /* .timeline-icon {
         display: none;
-        /* Hide images */
+    } */
+
+    .timeline-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
     }
+
+    .timeline-container2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* margin: auto; */
+    }
+
+    .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .timeline li {
+        position: relative;
+        /* padding-bottom:px; */
+    }
+
+    .timestamp {
+        position: absolute;
+        top:-1.7rem;
+        left:50%;
+        transform: translateX(-50%);
+        background-color: #6c63ff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+
+    .timeline_right li:before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: 0%;
+        width: 2px;
+        height: 200%;
+        background-color: #6c63ff;
+        transform: translateX(-50%);
+    }
+
+    .timeline_left li:before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: -0.5%;
+        width: 2px;
+        height: 200%;
+        background-color: #6c63ff;
+        transform: translateX(-50%);
+    }
+
+    .timeline h4 {
+        margin-top: 0;
+        text-align: center;
+        color: #6c63ff;
+    }
+
 }
