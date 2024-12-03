@@ -365,9 +365,11 @@ body {
 
 #smIntro p {
     color: #000000;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     animation-duration: 1.5s;
     animation-name: blink;
+    padding-left: 2px;
+    padding-right: 2px;
 
 }
 
